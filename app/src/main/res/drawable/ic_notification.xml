@@ -1,9 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 状态栏 / 通知栏小图标：单色剪影（纯白 + 透明背景），系统会强制染色，不得使用彩色图形 -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
     android:viewportWidth="24"
     android:viewportHeight="24">
+    <!-- 外圈：实心圆环（evenOdd 挖空），环厚与外径比例对齐桌面图标的深色描边 -->
     <path
         android:fillColor="#FFFFFFFF"
-        android:pathData="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2M12,20A8,8 0 1,1 20,12A8,8 0 0,1 12,20M12.5,7L11,7V13L16,15.9L16.8,14.6L12.5,12.1V7Z" />
+        android:fillType="evenOdd"
+        android:pathData="M12,2.8A9.2,9.2 0 1,0 21.2,12A9.2,9.2 0 0,0 12,2.8Z M12,4.3A7.7,7.7 0 1,0 19.7,12A7.7,7.7 0 0,0 12,4.3Z" />
+    <!-- 指针：12 点经中心指向右下（与桌面图标同角度），方头收尾 -->
+    <path
+        android:pathData="M12,12L12,7.35"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="square" />
+    <path
+        android:pathData="M12,12L16,14.3"
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.5"
+        android:strokeLineCap="square" />
 </vector>
