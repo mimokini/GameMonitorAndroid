@@ -10,15 +10,12 @@
         android:fillColor="#FFFFFFFF"
         android:fillType="evenOdd"
         android:pathData="M12,2.8A9.2,9.2 0 1,0 21.2,12A9.2,9.2 0 0,0 12,2.8Z M12,4.3A7.7,7.7 0 1,0 19.7,12A7.7,7.7 0 0,0 12,4.3Z" />
-    <!-- 指针：12 点经中心指向右下（与桌面图标同角度），方头收尾 -->
+    <!-- 指针：单条折线（12 点 -> 中心 -> 右下），miter 折角 + 方头端点；
+         若拆成两条独立线段，方头会在中心各自外扩 0.75dp，交叠处出现多余凸角 -->
     <path
-        android:pathData="M12,12L12,7.35"
+        android:pathData="M12,7.35L12,12L16,14.3"
         android:strokeColor="#FFFFFFFF"
         android:strokeWidth="1.5"
-        android:strokeLineCap="square" />
-    <path
-        android:pathData="M12,12L16,14.3"
-        android:strokeColor="#FFFFFFFF"
-        android:strokeWidth="1.5"
-        android:strokeLineCap="square" />
+        android:strokeLineCap="square"
+        android:strokeLineJoin="miter" />
 </vector>

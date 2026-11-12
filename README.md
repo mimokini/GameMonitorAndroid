@@ -3,7 +3,7 @@
 本机游戏/应用时长管控，全部在手机端配置，无 Web 控制台。
 
 - 包名：`com.gamemonitor.android`
-- 版本：`0.1.4`（versionCode `14`）
+- 版本：`0.1.5`（versionCode `15`）
 - 设备所有者组件：`com.gamemonitor.android/.service.MonitorDeviceAdminReceiver`
 - minSdk 29（Android 10）/ targetSdk 35（Android 15）
 
@@ -164,15 +164,14 @@ app/src/main/java/com/gamemonitor/android/
 - 未在真机上验证隐藏/恢复图标：`activity-alias` 的启用/禁用、通知「管理」action、PIN 锁定均为静态实现与编译验证，需实机确认桌面图标是否即时消失。
 - 悬浮层（含全屏倒计时）均为 `FLAG_NOT_TOUCHABLE | FLAG_NOT_FOCUSABLE`，只做展示，不再拦截触摸；因此倒计时期间仍可滑动屏幕，拦截完全依靠返回桌面或设备所有者挂起。
 
-## 8. 发布与分发（v0.1.4）
+## 8. 发布与分发（v0.1.5）
 
-- 版本：`versionName = 0.1.4`、`versionCode = 14`（高于 0.1.3 的 13，可直接覆盖安装）。
-- 签名包：`dist/GameMonitor-0.1.4-release.apk`（20,038,434 字节）；分发 zip：`dist/GameMonitor-0.1.4-android.zip`（6,992,594 字节，**只含 APK 与安装说明 txt**）。
-- 0.1.4 改动：
-  - **桌面图标表盘缩小、留白增加**：自适应前景内容直径 `68dp → 54dp`（可见区 72dp 的 75%）；各密度方形/圆形图标同步收小（表盘占画布 74.2% → 70%），仍在 72dp 安全区内，48px 下细节清晰。
-  - **状态栏 / 通知栏小图标重做**：单色剪影（纯白 + 透明），外圈改为与桌面图标同比例实心环、指针角度一致、方头收尾；通知与快捷方式共用 `ic_notification`，引用路径不变。
-  - 其余沿用 0.1.3：全新应用图标（自适应 + 各密度方形/圆形）、主界面「关于」页（版本/作者/GitHub）、打赏二维码长按保存到相册。
-  - 计时与拦截逻辑未改动。
+- 版本：`versionName = 0.1.5`、`versionCode = 15`（高于 0.1.4 的 14，可直接覆盖安装）。
+- 签名包：`dist/GameMonitor-0.1.5-release.apk`（20,038,434 字节）；分发 zip：`dist/GameMonitor-0.1.5-android.zip`（6,992,568 字节，**只含 APK 与安装说明 txt**）。
+- 0.1.5 改动：
+  - **通知 / 状态栏图标指针接缝修正**：原两根指针是两条独立线段且各自带方头，方头在中心相互外扩形成多余凸角；改为单条折线 `M12,7.35L12,12L16,14.3`（`strokeLineJoin=miter` 斜接 + 端点方头），中心接缝干净。
+  - 其余沿用 0.1.4（表盘收小、留白增加、通知单色剪影、关于页、打赏二维码），计时与拦截逻辑未改动。
+- 0.1.4 改动（历史）：桌面图标表盘缩小（自适应前景 68dp → 54dp，密度图/圆形图标同步收小）、状态栏 / 通知栏小图标按新图标重做。
 - 0.1.3 改动（历史）：全新应用图标（mipmap 48/72/96/144/192 + adaptive）、关于页（版本/作者/GitHub）、打赏二维码长按保存到 `Pictures/GameMonitor`。
 - 0.1.2 改动（历史）：密码门统一入口校验 + `onStop` 重新锁定、取消宽限期、倒计时跨切换按绝对时间继续、加时（默认 30 分钟 / 1–720）、底部 TabRow `navigationBarsPadding()`；详见 `APP介绍.md`。
 - **密钥在工程外**：`D:\Development\gm-keys\game-monitor-release.jks`（alias `gamemonitor`，RSA 2048，有效期 10000 天）；
@@ -183,7 +182,7 @@ app/src/main/java/com/gamemonitor/android/
   缺少签名配置时 `assembleRelease` 会直接失败并提示缺少哪一项，不会静默产出未签名包。
 - **敏感信息**：`D:\Development\gm-keys` 下的 jks 与 properties/PASSWORD.txt 含签名私钥/口令，切勿提交到任何仓库、勿复制进 `dist/` 与 zip。仓库已通过 `.gitignore` 排除 `*.jks`、`*.keystore`、`keystore.properties`、`PASSWORD.txt`、`local.properties`、`build/`、`.gradle/`、`.kotlin/`、`dist/` 下的 APK/ZIP 等。
 - **密钥必须备份**：jks 与口令文件丢失后，已安装的设备将无法用同签名新包覆盖升级（只能卸载重装）。
-- 安装：`adb install -r dist/GameMonitor-0.1.4-release.apk`，或手机点击 APK 安装。
+- 安装：`adb install -r dist/GameMonitor-0.1.5-release.apk`，或手机点击 APK 安装。
 - 升级：必须使用同一签名覆盖安装；不要先卸载，否则 DataStore 会被清空（条目、时段、统计、管理密码全丢）。
 - 卸载警告：卸载会清空全部本地配置与统计；若图标处于隐藏状态，卸载/清数据后需 `adb shell pm enable com.gamemonitor.android/.LauncherAlias` 恢复。
 
