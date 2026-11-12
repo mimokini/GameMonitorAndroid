@@ -171,3 +171,7 @@ app/src/main/java/com/gamemonitor/android/
 <img src="docs/reward.png" width="200" alt="打赏二维码">
 
 如果这个小工具确实帮你省下了一点游戏时间，欢迎请我喝杯咖啡。你的支持是持续更新的动力，谢谢。
+
+## 许可证
+
+本项目采用 [MIT License](LICENSE)。
