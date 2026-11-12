@@ -1,5 +1,7 @@
 # GameMonitor（Android 版 · 第一阶段 MVP）
 
+<img src="docs/app-icon.png" width="96" align="right" alt="GameMonitor 图标">
+
 本机游戏/应用时长管控，全部在手机端配置，无 Web 控制台。
 
 - 包名：`com.gamemonitor.android`
