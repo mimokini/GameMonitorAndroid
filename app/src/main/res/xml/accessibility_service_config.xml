@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  严格作用域：只接收系统设置类包的窗口状态变化事件；
+  不使用 flagRetrieveInteractiveWindows（不遍历其他应用窗口）。
+-->
+<accessibility-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accessibilityEventTypes="typeWindowStateChanged"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:accessibilityFlags="flagDefault"
+    android:canRetrieveWindowContent="true"
+    android:description="@string/accessibility_desc"
+    android:notificationTimeout="100"
+    android:packageNames="com.android.settings,com.google.android.settings,com.miui.securitycenter,com.coloros.settings,com.oplus.settings,com.vivo.settings,com.huawei.systemmanager,com.samsung.android.settings" />

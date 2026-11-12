@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">GameMonitor</string>
+    <string name="accessibility_desc">用于在游戏时长用尽时返回桌面。仅在由本应用主动打开的系统应用详情页内，且用户显式开启“自动强行停止”后才执行一次点击；不读取其他应用窗口内容。</string>
+    <string name="shortcut_hide">隐藏图标</string>
+    <string name="shortcut_hide_long">隐藏 GameMonitor 桌面图标</string>
+    <string name="shortcut_open">打开</string>
+    <string name="shortcut_open_long">打开 GameMonitor 管理界面</string>
+    <string name="shortcut_disabled">当前不可用</string>
+</resources>

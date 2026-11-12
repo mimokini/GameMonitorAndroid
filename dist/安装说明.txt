@@ -1,0 +1,39 @@
+GameMonitor 0.1.3 (Android) 安装说明
+
+一、安装
+1) adb install -r GameMonitor-0.1.3-release.apk
+2) 或在手机上点击 APK 安装（需允许 [安装未知应用]）。
+3) 首次启动后，进入应用内 [权限] 页逐项授权：使用情况访问、无障碍、悬浮窗、通知、忽略电池优化。
+4) 可选（更高管控级别），在电脑执行：
+   adb shell dpm set-device-owner com.gamemonitor.android/.service.MonitorDeviceAdminReceiver
+
+二、升级
+必须使用同一签名的 APK 覆盖安装；不要先卸载，否则配置、统计与管理密码会被清空。
+0.1.3 与 0.1.2 使用同一签名，可直接覆盖升级。
+
+三、密码与管理入口
+桌面图标、通知栏 [管理]、最近任务、快捷方式等任何入口，进入应用都必须先验证管理密码；
+切出应用（回到桌面或切到其他应用）后再回来，需要重新验证。
+隐藏图标后，恢复只能在应用内 [权限] 页操作，入口操作不会改变隐藏状态。
+
+四、隐藏 / 恢复桌面图标
+隐藏：长按桌面图标，选择 [隐藏图标]（需先在应用内设置管理密码）。
+恢复：通知栏点击 [管理] 并输入管理密码，进入 [权限] 页点击 [恢复图标]；或使用 adb 兜底：
+   adb shell pm enable com.gamemonitor.android/.LauncherAlias
+
+五、0.1.3 改动
+1) 全新应用图标：与 Windows 端同一套设计（渐变表盘），含自适应图标（adaptive icon）、
+   圆形图标与各密度 mipmap（48/72/96/144/192）。
+2) 主界面右上角新增「关于」入口：
+   - 版本号（读取实际安装包版本，可在「关于」中查看）
+   - 作者：君的笑颜
+   - GitHub 链接：https://github.com/mimokini/GameMonitorAndroid （点击用系统浏览器打开）
+3) 「打赏作者」：关于页底部按钮，点击弹出收款二维码；长按二维码保存到相册
+   （Pictures/GameMonitor，Android 10 及以上无需存储权限），保存成功/失败均有提示。
+4) 其余功能与 0.1.2 一致，未改动计时与拦截逻辑。
+
+六、系统要求
+Android 10（API 29）及以上。
+
+版本：versionName 0.1.3 / versionCode 13
+签名 SHA-256：73:6E:33:55:B1:6D:42:7C:67:5E:EE:DA:ED:66:1A:F4:53:6F:F0:33:3A:76:25:E0:C2:61:FE:54:51:ED:71:D0

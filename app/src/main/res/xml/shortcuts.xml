@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_notification"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="hide_icon"
+        android:shortcutLongLabel="@string/shortcut_hide_long"
+        android:shortcutShortLabel="@string/shortcut_hide">
+        <intent
+            android:action="com.gamemonitor.android.ACTION_HIDE_ICON"
+            android:targetClass="com.gamemonitor.android.MainActivity"
+            android:targetPackage="com.gamemonitor.android" />
+    </shortcut>
+    <shortcut
+        android:enabled="true"
+        android:icon="@drawable/ic_notification"
+        android:shortcutDisabledMessage="@string/shortcut_disabled"
+        android:shortcutId="open_app"
+        android:shortcutLongLabel="@string/shortcut_open_long"
+        android:shortcutShortLabel="@string/shortcut_open">
+        <intent
+            android:action="com.gamemonitor.android.ACTION_OPEN_APP"
+            android:targetClass="com.gamemonitor.android.MainActivity"
+            android:targetPackage="com.gamemonitor.android" />
+    </shortcut>
+</shortcuts>

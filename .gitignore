@@ -1,0 +1,23 @@
+# Gradle / IDE 构建产物
+build/
+.gradle/
+.kotlin/
+.idea/
+*.iml
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 签名密钥与口令：严禁入库
+*.jks
+*.keystore
+keystore.properties
+PASSWORD.txt
+
+# 分发包与归档（体积大）
+*.apk
+*.zip
+
+# 本地发布 / 备份工作目录（仅本机留存）
+2026-*/
